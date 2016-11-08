@@ -2,18 +2,25 @@
   // 1) What is the purpose of the 'this keyword'?
 
       //Answer
+      //to apply context.
 
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
       //Answer
+      //call - this is an explicit keyword that calls the function with 'this' immediatly. the arguments following the context are strings.
+      //apply - this is an explicit keyword that calls the function with 'this' immediatly. the arguments following the context is an array.
+      //bind - this is an explicit keyward that takes a function and an object and binds them together in a brand new function. 'this' now referring to the bound object.
+      //implicit - this is simply implied context. So a function that is called with dot notation will referr to the connected object as 'this'.
 
   // 3) What is the difference between call and apply?
 
       //Answer
+      //the arguments that it takes, call takes variables, and apply takes arrays. no other difference.
 
   // 4) What does .bind do?
 
       //Answer
+      //.bind will wrap the function and object into a new function.
 
 
 //Next Problem
@@ -24,9 +31,16 @@
   //getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
 
     //Code Here
+    var user = {
+      username: 'rob',
+      email: 'robdel13@gmail.com',
+      getUsername: function() {
+        return this.username;
+      }
+    };
 
 //Now, invoke the getUsername method and verify you got the username of the object and not anything else.
-
+user.getUsername();
 
 //Next Problem
 
